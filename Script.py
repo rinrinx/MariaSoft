@@ -6,7 +6,7 @@ STATUS_TXT = """
 ★ Topladım kullanıcı: <code>{}</code>
 ★ Kullanılmış depolama: <code>{}</code> 𝙼𝚒𝙱
 ★ Ücretsiz depolama: <code>{}</code> 𝙼𝚒𝙱"""
-    LOG_TEXT_P = """#YeniKullanici
+LOG_TEXT_P = """#YeniKullanici
 ID - <code>{}</code>
 Ad - {}
 """
