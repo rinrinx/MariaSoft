@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 @Client.on_message(filters.command("start") & filters.private)
 async def start(client, message):
-  #if (message.from_user.id < 5000000000) == True:
+  if (message.from_user.id < 5000000000) == True:
     if AUTH_CHANNEL:
         try:
             user = await client.get_chat_member(AUTH_CHANNEL, message.chat.id)
@@ -35,9 +35,15 @@ async def start(client, message):
                                   text=script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
 
     if len(message.command) != 2:
-        buttons = [[
-            InlineKeyboardButton('🔍 Ara', switch_inline_query_current_chat='')
-        ]]
+        buttons = [
+            [
+                InlineKeyboardButton('Ara 🔍', switch_inline_query_current_chat=''),
+                InlineKeyboardButton('Bot Nasıl Kullanılır?', url='https://t.me/anagrupp/7402')
+            ],
+            [
+                InlineKeyboardButton('Bot Destek', url=f"https://t.me/mmagneto"),
+            ]
+            ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_photo(
             chat_id=message.from_user.id,
